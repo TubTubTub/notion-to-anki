@@ -1,17 +1,16 @@
-'''
-HOW TO USE
+# HOW TO USE
 
-1. Change NOTE_NAME to desired name (for renaming assets)
-2. Replace input.md and files in input/asset folder
-3. Create new deck in Anki
-4. Import output.txt and drag new files in output/asset into %AppData%\Anki2\User 1\collection.media
+# 1. Change NOTE_NAME to desired name (for renaming assets)
+# 2. Replace input.md and files in input/asset folder
+# 3. Create new deck in Anki
+# 4. Import output.txt and drag new files in output/asset into %AppData%\Anki2\User 1\collection.media
 
-'''
-
+from pprint import pprint
 from pathlib import Path
+from urllib.parse import unquote
 import shutil
 
-NOTE_NAME = 'cell_metabolism_1'
+NOTE_NAME = 'plasma'
 
 def count_bold_level(line):
     i = 0
@@ -46,7 +45,9 @@ def replace_images(lines):
 
     for line in lines:
         if '![' in line:
-            file_name = line[line.find('[') + 1 : line.find(']')]
+            file_name = line[line.find('(') + 1 : line.find(')')]
+            file_name = unquote(file_name) # Processes %20 characters
+
             extension = file_name.rpartition('.')[-1]
             new_file_name = NOTE_NAME + '_' + str(image_index) + '.' + extension
 
@@ -80,7 +81,8 @@ def parse(lines):
                 current_level.append(line)
             else:
                 if current_description.strip() != '"' and 'Learning Objectives' not in current_description:
-                    new_title = '"###' + ' → '.join(current_level).replace('#', '') + '"'
+                    print(current_level)
+                    new_title = '"<h4>' + ' → '.join(current_level[:-1]).replace('#', '').strip() + ' →' + '</h4>' + '<h2>' + current_level[-1].replace('#', '').strip() + '</h2>"'
                     res[new_title] = current_description + '"'
                     
                 current_description = '"'
@@ -94,7 +96,7 @@ def parse(lines):
             current_description += line
             current_description += '\n'
     
-    new_title = '"###' + ' → '.join(current_level).replace('#', '') + '"'
+    new_title = '"<h4>' + ' → '.join(current_level[:-1]).replace('#', '') + ' →' + '</h4>' + '<h2>' + current_level[-1].replace('#', '') + '</h2>"'
     res[new_title] = current_description + '"'
 
     return res

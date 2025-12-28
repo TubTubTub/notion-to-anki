@@ -1,146 +1,102 @@
-# Cell Metabolism I
+# Plasma
 
 🎓 *Learning Objectives:*
 
-- 1-POM-1-1: Cell metabolism: Summarise the metabolism of carbohydrates, fats and proteins in health, exercise, illness and disease.
+- 1-POM-2-4: Blood plasma: Recall the major components of plasma, summarise their functions, and explain the main types of exchange between plasma and body fluids across the capillary wall.
 
 ---
 
-### Types of metabolism reactions
+## Plasma
 
-- Oxidation-reduction → electron transfer
-- Ligation requiring ATP cleavage → formation of covalent bonds
-- Isomerisation → forming isomers
-- Group transfer → transferring functional groups
-- Hydrolytic → breaking of bonds through water
-- Addition or removal of functional groups → removing or forming double bonds
+- The liquid component of blood
+- Blood is taken into a tube with an anticoagulant
 
-## Glycolysis
+### Serum
 
-### First half
+- Plasma without clotting factors
+- Blood is taken without anticoagulant → allowed to clot → centrifuged
+- Cleaner sample than plasma, but takes longer to prepare
 
-Formation of high energy compounds
+![Screenshot 2022-07-13 at 13.45.56.png](Screenshot_2022-07-13_at_13.45.56.png)
 
-2 ATP invested
+## Types of fluid compartments
 
-1. Glucose → glucose-6-phosphate
-    - Hexokinase
-    - Uses ATP
-    - Irreversible → traps glucose in cell as G6P negative charge
-    - Group transfer
-    
-    ![image.png](image.png)
-    
-2. Glucose-6-phosphate → fructose-6-phosphate
-    - Phosphoglucose-isomerase
-    - Isomerisation
-    
-    ![image.png](image%201.png)
-    
-3. Fructose-6-phosphate → fructose-1,6-biphosphate
-    - Phosphofructo-kinase
-    - Uses ATP
-    - Group transfer
-    
-    ![image.png](image%202.png)
-    
-4. Fructose-1,6-biphosphate → G3P (GAP) + DHAP
-    - Adolase
-    - Hydrolytic
+(40L of water in 70kg adult male - 55% intracellular, 45% extracellular)
 
-![image.png](image%203.png)
+- Intracellular (within cells)
+- Interstitial fluid (between cells)
+- Transcellular fluid ( e.g. includes CSF, ocular, synovial fluid)
+- Blood plasma
 
-1. DHAP → G3P
-    - Triosephosphate-isomerase (TPI)
-    - Isomerisation
-    - Deficiency in TPI is the only fatal glycolytic enzymopathy
-    
-    ![image.png](image%204.png)
-    
+## Functions of plasma
 
-### Second half
+- **Clotting** - clotting factors and Von Willebrand factor
+- **Osmotic pressure maintenance** - proteins help maintain colloidal osmotic pressure
+- **Immune defence** - antibodies and complement proteins are found in plasma
+- **Endocrine** - many hormones are soluble in plasma and travel through blood to target organs
+- **Metabolism** - nutrients such as glucose, amino acids and vitamins transported
+- **Excretion** - waste products are transported via plasma fraction of the blood to the kidneys for removal
 
-4x ATP generated
+# Constituents of plasma
 
-2x NADH generated
+## Proteins
 
-2x pyruvate generated
+Assayed using electrophoresis
 
-1. G3P → 1,3-biphosphoglycerate
-    - G3P dehydrogenase
-    - NADH generated
-    - Redox and Group transfer
-    
-    ![image.png](image%205.png)
-    
-2. 1,3-biphosphoglycerate → 3-phosphoglycerate
-    - Phosphoglycerate kinase
-    - ATP generated
-    - Group transfer
-    
-    ![image.png](image%206.png)
-    
-3. 3-phosphoglycerate → 2-phosphoglycerate
-    - Phosphoglycerate mutase
-    - Isomerisation
-    
-    ![image.png](image%207.png)
-    
-4. 2-phosphoglycerate → phosphoenolpyruvate
-    - Enolase
-    - Group removal (dehydrogenation)
-    
-    ![image.png](image%208.png)
-    
-5. Phosphoenolpyruvate → pyruvate
-    - Pyruvate kinase
-    - ATP generated
-    - Group transfer
-    
-    ![image.png](image%209.png)
-    
+Major types of plasma proteins are:
 
-## Net result of glycolysis
+- **Serum albumin**
+- **Globulins** → alpha-1, alpha-2, beta-1, beta-2, gamma-globulin
 
-Glucose + 2 NAD → 2 ATP + 2 NADH + 2 pyruvate
+![Screenshot 2022-07-13 at 16.27.49.png](Screenshot_2022-07-13_at_16.27.49.png)
 
-### Net products generated
+### Serum albumin
 
-2 ATP + 2 NADH + 2 pyruvate
+Produced in liver
 
-### Irreversible steps of glycolysis
+- Maintains osmotic pressure
+- Transports lipids, hormones and ions
+- Transport of fatty acids (from breakdown of triglycerides in adipose tissue) to be used for 𝛃-oxidation
 
-- Hexokinase
-- Phosphofructokinase
-- Pyruvate kinase
+### Globulins
 
-![IMG_1328D8B70574-1.jpeg](IMG_1328D8B70574-1.jpeg)
+| Protein type | Examples | Function |
+| --- | --- | --- |
+| alpha-1 globulin | Alpha-1 antitrypsin (A1AT) | Protease inhibitor, inhibits neutrophil elastase from damage |
+| alpha-2 globulin | Haptoglobin
 
-## Pentose-phosphate pathway (PPP)
+α2-macroglobulin | Binds to haemoglobin released from RBCs, spleen then removes haptoglobin-haemoglobin complex
 
-Parallel pathway for converting G6P to generate biosynthetic molecules through anabolic reactions
+Protease inhibitor, inactivates fibrinolysis |
+| beta globulin | Transferrin | Transports iron |
+| gamma globulin | Immunoglobulins (antibodies)
 
-- Modes 1 → ribose-5-phosphate (for DNA synthesis)
-- Mode 2 → ribose-5-phosphate + NADPH
-- Mode 3 → complete oxidation to give NADPH + CO2
-- Mode 4 → ATP and NADPH needed
+C-reactive protein | Immunoregulatory
 
-## Fates of Pyruvate
+Acute-phase protein |
 
-- Conversion to Acetyl CoA
-- Alcohol fermentation
-- Generation of lactate
+## Electrolytes
 
-### Thiamine deficiency
+Helps maintain osmolarity
 
-- Thiamine (derivative of vitamin B1) is a cofactor of the pyruvate dehydrogenase complex (for conversion to acetyl-CoA)
-- Vitamin B1 deficiency can lead to **Beri-Beri**
-- Causes peripheral nervous damage and muscle weakness
+### Intracellular
 
-## Creatine buffer
+- K+
+- Mg2+
+- PO4
 
-Creatine phosphate is stored in muscles as buffer for phosphate for ATP production
+### Extracellular
 
-![image.png](image%2010.png)
+- Na+
+- Cl-
+- Ca2+
+- HCO3-
 
-![Screenshot_2022-07-08_at_13.22.04.png](Screenshot_2022-07-08_at_13.22.04.png)
+ATP used to power Na+K+ATPase, to maintain negative membrane potential
+
+If there is not enough ATP, an inward movement of sodium ions and water causes cells to become more spherical
+
+# Plasma uses
+
+- Biomarkers → key molecules within plasma provide biomarkers of disease
+- Passive immunotherapy → transferring immunoglobulins for immunity
