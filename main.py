@@ -1,5 +1,7 @@
 # HOW TO USE
 
+# (Make sure no notes before first heading in Notion page)
+
 # 1. Change NOTE_NAME to desired name (for renaming assets)
 # 2. Replace input.md and files in input/asset folder
 # 3. Create new deck in Anki
@@ -10,7 +12,7 @@ from pathlib import Path
 from urllib.parse import unquote
 import shutil
 
-NOTE_NAME = 'plasma'
+NOTE_NAME = 'white_blood_cells'
 
 def count_bold_level(line):
     i = 0
