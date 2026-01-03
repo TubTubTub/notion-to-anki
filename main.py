@@ -1,6 +1,8 @@
 # HOW TO USE
 
 # (Make sure no notes before first heading in Notion page)
+# (Tables are not supported, take a screenshot and paste it in as an image instead)
+# (Delete any unwanted toggle headings afterwards)
 
 # 1. Change NOTE_NAME to desired name (for renaming assets)
 # 2. Replace input.md and files in input/asset folder
@@ -12,7 +14,7 @@ from pathlib import Path
 from urllib.parse import unquote
 import shutil
 
-NOTE_NAME = 'white_blood_cells'
+NOTE_NAME = 'immune_evasion'
 
 def count_bold_level(line):
     i = 0
