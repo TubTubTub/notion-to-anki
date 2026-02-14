@@ -14,7 +14,7 @@ from pathlib import Path
 from urllib.parse import unquote
 import shutil
 
-NOTE_NAME = 'immune_evasion'
+NOTE_NAME = 'cancer'
 
 def count_bold_level(line):
     i = 0
