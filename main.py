@@ -5,8 +5,8 @@
 # (Delete any unwanted toggle headings afterwards)
 
 # 1. Create new deck in Anki
-# 2. Export Notion pages into individual .md files
-# 3. Move all .md files with their images into the input folder
+# 2. Export Notion pages into individual .md files and image folders (Export each Notion page individually)
+# 3. Move exported folder into input folder
 # 4. Check for notes before first heading, tables, and toggles
 # 4. Import output.txt and drag new files in output/asset into %AppData%\Anki2\User 1\collection.media
 
@@ -38,36 +38,38 @@ def empty_brackets(s):
 
     return s
 
-def replace_images(lines, file_nmae):
+def replace_images(images_folder, lines, file_name):
     new_lines = []
-    p = Path("input/assets")
     image_index = 0
     
-    files = [f for f in p.rglob('*') if f.is_file()]
-    assets = { f.name:str(f.resolve()) for f in files }
+    images = [f for f in images_folder.rglob('*') if f.is_file() and f.suffix != '.md']
+    assets = { f.name:str(f.resolve()) for f in images }
+    print(images)
+    print(assets)
 
     for line in lines:
         if '![' in line:
             image_path = line[line.find('(') + 1 : line.find(')')]
             image_path = unquote(image_path) # Processes %20 characters
-
-            extension = image_path.rpartition('.')[-1]
-            new_image_path = file_name + '_' + str(image_index) + '.' + extension
-
+            image_name = image_path.split('/')[1]
+            extension = image_name.rpartition('.')[-1]
+            
             if extension not in ['png', 'jpg', 'jpeg']:
                 raise Exception('Unaccounted extension:', image_path)
-
+            
+            new_image_path = file_name + '_' + str(image_index) + '.' + extension
+            
             line = line.replace('!', '')
             line = empty_brackets(line)
             line = line.replace('[]', f'<img src={new_image_path}>')
 
-            src_path = assets[image_path]
+            src_path = assets[image_name]
             dest_path = Path('output/assets') / new_image_path
             shutil.copy2(src_path, dest_path)
             
             image_index += 1
 
-            print(line)
+            # print(line)
 
         new_lines.append(line)
     return new_lines
@@ -107,22 +109,30 @@ def parse(lines):
 input_folder = Path("input")
 output_folder = Path("output")
 
-for file_path in input_folder.iterdir():
-    if file_path.is_file() and file_path.suffix == '.md':
-        res = {}
-        file_name = file_path.stem
+for folder_path in input_folder.iterdir():
+    if not folder_path.is_dir():
+        continue
 
-        with open(file_path, 'r', encoding='utf-8') as file:
-            content = file.read()
-            lines = content.split('\n')
-            
-            lines = [x.replace('|', '/') for x in lines]
-            lines = replace_images(lines, file_name)
-            res = parse(lines)
+    res = {}
+    image_folder = None
+    md_path = None
+    for item in folder_path.iterdir():
+        if item.is_dir():
+            image_folder = item
+        elif item.is_file() and item.suffix == '.md':
+            md_path = item
 
-        with open(f"output/{file_name}.txt", 'w', encoding='utf-8') as file:
-            for key, value in res.items():
-                file.write(key)
-                file.write('|')
-                file.write(value)
-                file.write('\n')
+    with open(md_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+        lines = content.split('\n')
+        
+        lines = [x.replace('|', '/') for x in lines]
+        lines = replace_images(image_folder, lines, folder_path.name)
+        res = parse(lines)
+
+    with open(f"output/{folder_path.name}.txt", 'w', encoding='utf-8') as file:
+        for key, value in res.items():
+            file.write(key)
+            file.write('|')
+            file.write(value)
+            file.write('\n')
