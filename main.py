@@ -51,6 +51,7 @@ def replace_images(images_folder, lines, file_name):
         if '![' in line:
             image_path = line[line.find('(') + 1 : line.find(')')]
             image_path = unquote(image_path) # Processes %20 characters
+            print(image_path)
             image_name = image_path.split('/')[1]
             extension = image_name.rpartition('.')[-1]
             
@@ -61,7 +62,7 @@ def replace_images(images_folder, lines, file_name):
             
             line = line.replace('!', '')
             line = empty_brackets(line)
-            line = line.replace('[]', f'<img src={new_image_path}>')
+            line = line.replace('[]', f"<img src='{new_image_path}'>")
 
             src_path = assets[image_name]
             dest_path = Path('output/assets') / new_image_path
@@ -116,7 +117,9 @@ for folder_path in input_folder.iterdir():
     res = {}
     image_folder = None
     md_path = None
+
     for item in folder_path.iterdir():
+        print(item)
         if item.is_dir():
             image_folder = item
         elif item.is_file() and item.suffix == '.md':
