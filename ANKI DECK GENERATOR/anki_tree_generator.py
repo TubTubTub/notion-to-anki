@@ -1,7 +1,12 @@
-res = []
-TITLE_NAME = 'BRS'
+# 1. Export main page as .md file
+# 2. Run python file
+# 3. Install Mass Deck Creation Anki addon
+# 4. Copy and paste anki_tree.txt output to create new deck
 
-with open('BRS 2a8f587eccc180619563c2ca6bcacfba.md', 'r') as file:
+res = []
+TITLE_NAME = 'BRS Yr 2'
+
+with open('ANKI DECK GENERATOR/BRS 7b5798c9ff2b83baafcb019d5bd31d47.md', 'r') as file:
     lines = [x.strip() for x in file.readlines() if x.strip() != '']
 
     current_header = ''
@@ -20,5 +25,5 @@ with open('BRS 2a8f587eccc180619563c2ca6bcacfba.md', 'r') as file:
         
         i += 1
 
-with open('anki_tree.txt', 'w') as file:
+with open('ANKI DECK GENERATOR/anki_tree.txt', 'w') as file:
     file.write('\n'.join(res))

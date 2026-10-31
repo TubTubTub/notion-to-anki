@@ -41,7 +41,7 @@ def empty_brackets(s):
 def replace_images(images_folder, lines, file_name):
     new_lines = []
     image_index = 0
-    
+
     images = [f for f in images_folder.rglob('*') if f.is_file() and f.suffix != '.md']
     assets = { f.name:str(f.resolve()) for f in images }
     print(images)
@@ -130,7 +130,10 @@ for folder_path in input_folder.iterdir():
         lines = content.split('\n')
         
         lines = [x.replace('|', '/') for x in lines]
-        lines = replace_images(image_folder, lines, folder_path.name)
+        
+        if image_folder is not None:
+            lines = replace_images(image_folder, lines, folder_path.name)
+        
         res = parse(lines)
 
     with open(f"output/{folder_path.name}.txt", 'w', encoding='utf-8') as file:
